@@ -101,10 +101,6 @@ That's it.  It takes longer to write than actually carrying the steps above.  In
 
 or another demo blogofile site running on Google App Engine:
 
-<<<<<<< HEAD
 <a href="http://blogofile-gae-demo.appspot.com/">http://blogofile-gae-demo.appspot.com</a>   
 
 <small>I want to thank <a href="http://mike.pirnat.com/2010/12/21/how-i-deploy-my-blogofile-blog-on-webfaction/">Mike Pirnat</a> for answering many of my initial, silly questions about Blogofile.  Thanks Mike.</small>
-=======
-<a href="http://blogofile-gae-demo.appspot.com/">http://blogofile-gae-demo.appspot.com</a>   
->>>>>>> ec388791fcccc42efae8995c35d8e71afddc93a6
