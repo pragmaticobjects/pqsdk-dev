@@ -5,6 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         ${self.head()}
+<<<<<<< HEAD
 
 	<script type="text/javascript">
 
@@ -20,6 +21,8 @@
   	})();
 
 	</script>
+=======
+>>>>>>> ec388791fcccc42efae8995c35d8e71afddc93a6
     </head>
     
     <body>
