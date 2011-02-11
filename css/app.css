@@ -1,0 +1,81 @@
+body {
+	font: 14px/21px Arial, Helvetica, sans-serif;    
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px dotted #008000;
+    color: #000000;
+}
+
+a:hover {
+    color: #008000;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	
+}
+
+a.blog_name {
+	border-bottom: none;
+	color: #008000;
+}
+
+#blog_post_list ul, #categories ul, #archives ul {
+	list-style-type: square;
+	padding-bottom: 15px;
+	margin-left: 15px; 	
+}
+
+#blog_post_list ul li, #categories ul li, #archives ul li {
+	color: #008000;
+}
+
+.tab-menu {
+
+}
+
+.tab-menu ul {
+    margin: 0;
+    padding: 0 0 10px 0;
+    margin: 0 0.625em 0 0;
+}
+
+.tab-menu ul li {
+    list-style: none;
+    display: inline;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.tab-menu ul li a {	 
+     background: #EEE; 
+     color: #666; 
+     text-decoration: none; 
+     text-align: center; 
+     border: 0; 
+     padding: 5px 10px 5px 10px;	 
+     -moz-border-radius: 3px; 
+     -webkit-border-radius: 3px;     
+     font-size: 1.5em;
+     font-weight: normal;
+}
+
+.tab-menu ul li.active a {
+    color: #008000;
+}
+
+.tab-menu ul li a:hover {
+    background: #008000; color: #FFF;
+}
+
+.tab-menu ul li.active a:hover {
+    background: #008000; color: #FFF;
+}

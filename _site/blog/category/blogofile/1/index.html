@@ -1,0 +1,300 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+    <title>
+    PqSDK
+</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed"
+/>
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/blog/feed/atom"
+/>
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/pygments_monokai.css' type='text/css' />
+<link rel='stylesheet' href='/css/screen.css' type='text/css' media="screen, projection"
+/>
+<link rel='stylesheet' href='/css/print.css' type='text/css' media="print"
+/>
+<!--[if lt IE 8]>
+    <link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+<link rel='stylesheet' href='/css/app.css' type='text/css' media="screen, projection"
+/>
+<link rel='stylesheet' href='/css/fancy.css' type='text/css' media="screen, projection"
+/>
+
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js">
+</script>
+<script type="text/javascript" src="/js/googleRSSWidget.js">
+</script>
+<script type="text/javascript" src="/js/site.js">
+</script>
+
+
+	<script type="text/javascript">
+
+  	var _gaq = _gaq || [];
+  	_gaq.push(['_setAccount', 'UA-21423134-1']);
+  	_gaq.push(['_setDomainName', '.pqsdk.org']);
+  	_gaq.push(['_trackPageview']);
+
+  	(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+
+	</script>
+    </head>
+    
+    <body>
+        <div class="container">
+            
+    
+    <div id="header" onclick="location.href='/';"
+    style="cursor: pointer;">        
+    </div>    
+    <hr> 
+    <h2>
+        <a href="/" class="blog_name">
+        <span id="blog_name">
+            PqSDK
+        </span>
+        </a>
+    </h2>
+             
+    <hr> 
+    <h2 class="alt">Passionate quest for Software Development Knowledge.</h2> 
+    <hr>
+    <div class="tab-menu">
+	    <ul>
+	        <li id="page-blog" >
+	            <a href="/">Blog</a>
+	        </li>
+	        <li id="page-project" >
+	            <a href="/projects">Projects</a>
+	        </li>
+	        <li id="page-about" >
+	            <a href="/about">About</a>
+	        </li>
+	    </ul>
+	</div>
+	<hr class="space">
+            
+                        
+            <div class="span-15 colborder">
+                
+  
+
+
+
+<div class="blog_post" id="running-blogofile-on-google-app-engine">
+  <a class="blog_post_title" name="Running Blogofile on Google App Engine" />
+  <h3 class="blog_post_title"><a href="/blog/2011/02/13/running-blogofile-on-google-app-engine" rel="bookmark" title="Permanent Link to Running Blogofile on Google App Engine">Running Blogofile on Google App Engine</a></h3>
+  <small>February 13, 2011 at 03:00 PM | categories: 
+
+<a href='/blog/category/blogofile'>blogofile</a>, <a href='/blog/category/appengine'>appengine</a>
+ | <a href="http://info.pqsdk.org/blog/2011/02/13/running-blogofile-on-google-app-engine#disqus_thread">View Comments</a>
+  </small>
+  <hr class="space">
+  <span class="post_prose">
+    
+  <p>This post describes how I installed <a href="http://blogofile.com/">Blogofile</a> on Ubuntu 10.10, installed an <a href="https://github.com/pragmaticobjects/gae-enabling-blogofile">App Engine application</a> that I wrote and then deployed my Blogofile-powered blog on Google App Engine infrastructure.  It would be redundant to re-iterate all the reasons of why I chose Blogofile when you can read on the Blogofile web site.  But the most appealing features to me are the built-in Disqus and Git integration and the fact that the Git integration allows me to move my blog to another host easily if I ever need to do it.  But since I wanted to host on Google App Engine, I had thought that if I managed to accomplish this goal, moving my blog to another host would become a moot point.  Regardless, it's still good to have that option.  Blogofile is a great blog engine, but about the only thing that's better than Blogofile is the ability to run it on a solid infrastructure like Google App Engine.  This is where we can get the best of both worlds.     <br />
+</p>
+<p>This post is written for Ubuntu users, but if you use Windows or another distro, I don't think it would be that different.  First, in order to run App Engine on the lastest Ubuntu, you would have to install Python 2.5, which is no longer the default since Ubuntu 9.04.  You can follow the instructions here:</p>
+<p><a href="http://kovshenin.com/archives/installing-python-2-5-on-ubuntu-linux-10-10/">http://kovshenin.com/archives/installing-python-2-5-on-ubuntu-linux-10-10/</a>
+or
+<a href="http://www.codigomanso.com/en/2010/05/google-app-engine-en-ubuntu-10-4-lucid-lynx/">http://www.codigomanso.com/en/2010/05/google-app-engine-en-ubuntu-10-4-lucid-lynx/</a></p>
+<p>I prefered to have an isolated or virtual environment to work with Blogofile, so I use <a href="http://www.arthurkoziel.com/2008/10/22/working-virtualenv/">virtualenv</a>.  The first few steps are as follow:<br />
+</p>
+<div class="pygments_murphy"><pre>k@le:~<span class="nv">$ </span>mkdir Blog
+k@le:~/Blog<span class="nv">$ </span><span class="nb">cd </span>Blog
+k@le:~/Blog<span class="nv">$ </span>sudo apt-get install python-virtualenv
+k@le:~/Blog<span class="nv">$ </span>virtualenv env
+k@le:~/Blog<span class="nv">$ </span>. env/bin/activate
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>   
+</pre></div>
+
+<p>Once you activate the virtualenv as in the last line above, the prompt of the shell you are using will change, indicating that you are now in the virtualenv.  Assuming you have already git installed, otherwise it's time now to <strong>sudo apt-get install git</strong>.  Next you would want to grab <a href="https://github.com/EnigmaCurry/enigmacurry.github.com">blogofile</a> from the github source repository and run setup:</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>git clone git://github.com/EnigmaCurry/blogofile.git src
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span><span class="nb">cd </span>src
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/src<span class="nv">$ </span>python setup.py develop
+</pre></div>
+
+<p>Now you are ready to initialize, build and run the built-in web server that serves blogofile, by executing the following commands:</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/src<span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>mkdir dev
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span><span class="nb">cd </span>dev
+</pre></div>
+
+<p>and then</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>blogofile init simple_blog
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>blogofile build
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>blogofile serve 9090
+</pre></div>
+
+<p>It is that simple.  Fire up your browser, and point it to http://localhost:9090, and you will see a simple blogofile blog.  To stop the web server, hit Ctrl-C.  To add your post, create a file in the _posts directory and edit it.  Likewise, you can remove files from this _posts directory to remove the sample posts you see above.  Each time you make any change in either the _posts directory or css style changes or layout changes in the mako files, you need to build(compile) for the new static HTML pages to be regenerated. <br />
+</p>
+<p>Add your code to Git source control: </p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git init
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add _config.py
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add _controllers
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add _filters
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add index.html.mako
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add _posts
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add _site
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git add _templates
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git commit -m <span class="s2">&quot;Initial check-in&quot;</span>
+</pre></div>
+
+<p>Create an account on github, and then create a repository while you are in the admin console.  Back to <strong>~/Blog/dev</strong> directory, you are ready to push to github:</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git remote add origin https://...@github.com/.../&lt;your_repo&gt;.git
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span>git push origin master
+</pre></div>
+
+<p>Create an account on Google App Engine, and it's time to create your app engine program:</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/dev<span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>mkdir ae
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>git clone git://github.com/pragmaticobjects/gae-enabling-blogofile.git ae
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span><span class="nb">cd </span>ae
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/ae<span class="nv">$ </span>vi app.yaml
+</pre></div>
+
+<p>Replace the name of the app in app.yaml with the name that you select for you application.  Go back to <strong>~/Blog/dev</strong> directory, and rsync the compiled, static files to your app engine directory.<br />
+</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/ae<span class="nv">$ </span><span class="nb">cd</span> ../dev
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/ae<span class="nv">$ </span>rsync -a _site/* ../ae
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog/ae<span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>
+</pre></div>
+
+<p>Finally, let's deploy to app engine.</p>
+<div class="pygments_murphy"><pre><span class="o">(</span>env<span class="o">)</span>k@le:~/Blog<span class="nv">$ </span>~/&lt;path to gae&gt;/appcfg.py update ae
+</pre></div>
+
+<p>That's it.  It takes longer to write than actually carrying the steps above.  Instead of manually executing the rsync command each time, you could also take advantage of the post-commit hook provided by github for a little automation.  I however prefer this manual step, since I want to serve locally on the built-in web server and verify everything is OK first.  There are 2 demos you can check out.  The first one is this very same site that you are visiting.  You can verify by switching to its appspot domain:</p>
+<p><a href="http://lehoangkevin.appspot.com/">http://lehoangkevin.appspot.com</a></p>
+<p>or another demo blogofile site running on Google App Engine:</p>
+<p><a href="http://blogofile-gae-demo.appspot.com/">http://blogofile-gae-demo.appspot.com</a> <br />
+</p>
+<p><small>I want to thank <a href="http://mike.pirnat.com/2010/12/21/how-i-deploy-my-blogofile-blog-on-webfaction/">Mike Pirnat</a> for answering many of my initial, silly questions about Blogofile.  Thanks Mike.</small></p>
+
+  </span>
+</div>
+
+
+
+<script>
+	$j('#page-blog').addClass('active');
+</script> 
+
+  <div class="after_post"><a href="http://info.pqsdk.org/blog/2011/02/13/running-blogofile-on-google-app-engine#disqus_thread">Read and Post Comments</a></div>
+  <hr class="interblog" />
+
+            </div>
+                
+            <div class="span-7 last">
+                
+    
+<div id="search">
+    <h3>
+        Search
+        <div id="search">
+            <form id="searchform" method="get" action="http://www.google.com/search">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="oe" value="UTF-8">
+                <input type="hidden" name="domains" value="info.pqsdk.org">
+                <input type="hidden" name="sitesearch" value="info.pqsdk.org">
+                <input name="q" id="q" size="20" value="search in blog..." onfocus="if(this.value==this.defaultValue) this.value='';"
+                type="text">
+            </form>
+        </div>
+    </h3>
+<div>
+<hr>    
+<div id="blog_post_list">
+    <h3>
+        Latest blog posts
+    </h3>
+    <ul>
+        <li>
+            <a href="/blog/2011/02/13/running-blogofile-on-google-app-engine">Running Blogofile on Google App Engine</a>
+        </li>
+    </ul>
+</div>
+<hr>
+<div id="categories">
+    <h3>
+        Categories
+    </h3>
+    <ul>
+        <li>
+            <a href="/blog/category/appengine">appengine</a>
+            (
+            <a href="/blog/category/appengine/feed">rss</a>
+            ) (1)
+        </li>
+        <li>
+            <a href="/blog/category/blogofile">blogofile</a>
+            (
+            <a href="/blog/category/blogofile/feed">rss</a>
+            ) (1)
+        </li>
+    </ul>
+</div>
+<hr>
+<div id="archives">
+    <h3>
+        Archives
+    </h3>
+    <ul>
+        <li>
+            <a href="/blog/archive/2011/02/1" title="February 2011">February 2011</a>
+            &nbsp;(1)
+        </li>
+    </ul>
+</div>
+<hr>
+
+            </div>    
+            
+            
+    <p id="credits">
+RSS feeds for <a href="/blog/feed">Entries</a>
+ and <a
+href="http://optimalogiclabs.disqus.com/latest.rss">Comments</a>.
+<br>
+</p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/optimalogiclabs/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+<hr>
+Powered by <a href="http://www.blogofile.com">Blogofile</a>.
+<br/>
+&copy; 2011&nbsp;<a href="http://info.pqsdk.org">Kevin Hoang Le.</a>&nbsp;&nbsp;All Rights Reserved.
+
+
+        </div>
+    </body>
+    
+</html>
+
+
+
+
