@@ -1,0 +1,122 @@
+body {
+    font-family: 'lucida grande',Verdana,sans-serif;	
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    color: #008000;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	
+}
+
+#blog_post_list ul, #categories ul, #archives ul {
+	list-style-type: square;
+	padding-bottom: 15px;
+	margin-left: 15px; 	
+}
+
+#blog_post_list ul li, #categories ul li, #archives ul li {
+	color: #008000;
+}
+
+hr.space_sb {
+	width:70%;
+}
+
+.wrapper {
+    padding-top: 20px;
+}
+
+a.app-btn {
+    background: #EEE; 
+    color: #666; 
+    text-decoration: none; 
+    text-align: center; 
+    border: 0; 
+    padding: 5px 10px 5px 10px;	 
+    -moz-border-radius: 3px; 
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+    font-family: 'lucida grande',Verdana,sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+a:hover.app-btn {
+    background: #800000; color: #FFF;
+}
+
+.tab-menu {
+
+}
+
+.tab-menu ul {
+    margin: 0;
+    padding: 0 0 10px 0;
+    margin: 0 0.625em 0 0;
+}
+
+.tab-menu ul li {
+    list-style: none;
+    display: inline;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.tab-menu ul li a {	 
+     background: #EEE; 
+     color: #666; 
+     text-decoration: none; 
+     text-align: center; 
+     border: 0; 
+     padding: 5px 10px 5px 10px;	 
+     -moz-border-radius: 3px; 
+     -webkit-border-radius: 3px;
+     font-family: 'lucida grande',Verdana,sans-serif;
+     font-size: 1.5em;
+     font-weight: normal;
+}
+
+.tab-menu ul li.active a {
+    color: #800000;
+}
+
+.tab-menu ul li a:hover {
+    background: #800000; color: #FFF;
+}
+
+.tab-menu ul li.active a:hover {
+    background: #800000; color: #FFF;
+}
+
+#welcomecol {
+    text-align: right;
+    padding-top: 10px;
+}
+
+#maincol {	
+    min-height:500px; /* for modern browsers */
+    height:auto !important; /* for modern browsers */
+    height:500px; /* for IE5.x and IE6 */
+    padding: 10px;
+}
+
+#sidecol {	
+}
+
+#tabscol {	
+    border-bottom: solid 1px #333;	
+}
