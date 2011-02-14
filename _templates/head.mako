@@ -24,5 +24,3 @@
 </script>
 <script type="text/javascript" src="/js/googleRSSWidget.js">
 </script>
-<script type="text/javascript" src="/js/site.js">
-</script>
