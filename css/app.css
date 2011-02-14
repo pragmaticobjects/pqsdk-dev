@@ -91,15 +91,15 @@ a:hover.app-btn {
 }
 
 .tab-menu ul li.active a {
-    color: #800000;
+    color: #008000;
 }
 
 .tab-menu ul li a:hover {
-    background: #800000; color: #FFF;
+    background: #008000; color: #FFF;
 }
 
 .tab-menu ul li.active a:hover {
-    background: #800000; color: #FFF;
+    background: #008000; color: #FFF;
 }
 
 #welcomecol {

@@ -22,6 +22,7 @@ ${", ".join(category_links)}
  | <a href="${post.permalink}#disqus_thread">View Comments</a>
 % endif
   </small>
+  <hr class="space">
   <span class="post_prose">
     ${self.post_prose(post)}
   </span>

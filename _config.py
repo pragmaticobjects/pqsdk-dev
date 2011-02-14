@@ -2,7 +2,7 @@
 
 ######################################################################
 # This is your site's Blogofile configuration file.
-# pqsdk.com
+# http://info.pqsdk.org/
 #
 # This file doesn't list every possible setting, it relies on defaults
 # set in the core blogofile _config.py. To see where the default
@@ -19,7 +19,7 @@
 #  If you're hosting a blogofile powered site as a subdirectory of a larger
 #  non-blogofile site, then you would set the site_url to the full URL
 #  including that subdirectory: "http://www.yoursite.com/path/to/blogofile-dir"
-site.url = "http://pqsdk.com"
+site.url = "http://info.pqsdk.org/"
 
 #### Blog Settings ####
 blog = controllers.blog
@@ -67,7 +67,7 @@ blog.auto_permalink.path    = "/blog/:year/:month/:day/:title"
 ######################################################################
 #### Disqus.com comment integration ####
 blog.disqus.enabled = True
-blog.disqus.name    = "blogofile"
+blog.disqus.name    = "optimalogiclabs"
 
 ### Syntax highlighter ###
 # You can change the style to any builtin Pygments style
