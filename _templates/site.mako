@@ -9,11 +9,9 @@
     
     <body>
         <div class="container">
-            <div class="span-22 prepend-1 last">
-                ${self.header()}                
-            </div>            
+            ${self.header()}            
                         
-            <div class="span-15 prepend-1 colborder">
+            <div class="span-15 colborder">
                 ${next.body()}
             </div>
                 
@@ -21,9 +19,7 @@
                 ${self.sidebar()}
             </div>    
             
-            <div class="span-22 last">                
-                ${self.footer()}                
-            </div>
+            ${self.footer()}
         </div>
     </body>
     

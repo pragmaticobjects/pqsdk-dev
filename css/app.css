@@ -1,5 +1,4 @@
-body {
-    font-family: 'lucida grande',Verdana,sans-serif;	
+body {    
 }
 
 a {
@@ -32,33 +31,6 @@ ul li {
 	color: #008000;
 }
 
-hr.space_sb {
-	width:70%;
-}
-
-.wrapper {
-    padding-top: 20px;
-}
-
-a.app-btn {
-    background: #EEE; 
-    color: #666; 
-    text-decoration: none; 
-    text-align: center; 
-    border: 0; 
-    padding: 5px 10px 5px 10px;	 
-    -moz-border-radius: 3px; 
-    -webkit-border-radius: 3px;
-    cursor: pointer;
-    font-family: 'lucida grande',Verdana,sans-serif;
-    font-size: 1.5em;
-    font-weight: normal;
-}
-
-a:hover.app-btn {
-    background: #800000; color: #FFF;
-}
-
 .tab-menu {
 
 }
@@ -84,8 +56,7 @@ a:hover.app-btn {
      border: 0; 
      padding: 5px 10px 5px 10px;	 
      -moz-border-radius: 3px; 
-     -webkit-border-radius: 3px;
-     font-family: 'lucida grande',Verdana,sans-serif;
+     -webkit-border-radius: 3px;     
      font-size: 1.5em;
      font-weight: normal;
 }
@@ -100,23 +71,4 @@ a:hover.app-btn {
 
 .tab-menu ul li.active a:hover {
     background: #008000; color: #FFF;
-}
-
-#welcomecol {
-    text-align: right;
-    padding-top: 10px;
-}
-
-#maincol {	
-    min-height:500px; /* for modern browsers */
-    height:auto !important; /* for modern browsers */
-    height:500px; /* for IE5.x and IE6 */
-    padding: 10px;
-}
-
-#sidecol {	
-}
-
-#tabscol {	
-    border-bottom: solid 1px #333;	
 }

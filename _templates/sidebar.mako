@@ -14,7 +14,7 @@
         </div>
     </h3>
 <div>
-<hr class="space_sb">    
+<hr>    
 <div id="blog_post_list">
     <h3>
         Latest blog posts
@@ -27,7 +27,7 @@
         % endfor
     </ul>
 </div>
-<hr class="space_sb">
+<hr>
 <div id="categories">
     <h3>
         Categories
@@ -43,7 +43,7 @@
         % endfor
     </ul>
 </div>
-<hr class="space_sb">
+<hr>
 <div id="archives">
     <h3>
         Archives
@@ -57,4 +57,4 @@
         % endfor
     </ul>
 </div>
-<hr class="space_sb">
+<hr>
