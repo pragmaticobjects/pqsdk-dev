@@ -32,5 +32,5 @@ function paragraphPermalinks(){
 }
 
 $j(document).ready(function(){
-    paragraphPermalinks();
-  });
+	paragraphPermalinks();
+});
