@@ -4,7 +4,7 @@
     </div>    
     <hr> 
     <h2>
-        <a href="/">
+        <a href="/" class="blog_name">
         <span id="blog_name">
             ${bf.config.blog.name}
         </span>
