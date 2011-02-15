@@ -4,7 +4,7 @@ date: 2011/02/13 15:00:00
 title: Running Blogofile on Google App Engine
 ---
 
-This post describes how I installed <a href="http://blogofile.com/">Blogofile</a> on Ubuntu 10.10, installed an App Engine application that I wrote and then deployed my Blogofile-powered blog on Google App Engine infrastructure.  It would be redundant to re-iterate all the reasons of why I chose Blogofile when you can read on the Blogofile web site.  But the most appealing features to me are the built-in Disqus and Git integration and the fact that the Git integration allows me to move my blog to another host easily if I ever need to do it.  But since I wanted to host on Google App Engine, I had thought that if I managed to accomplish this goal, moving my blog to another host would become a moot point.  Regardless, it's still good to have that option.  Blogofile is a great blog engine, but about the only thing that's better than Blogofile is the ability to run it on a solid infrastructure like Google App Engine.  This is where we can get the best of both worlds.       
+This post describes how I installed <a href="http://blogofile.com/">Blogofile</a> on Ubuntu 10.10, installed an <a href="https://github.com/pragmaticobjects/gae-enabling-blogofile">App Engine application</a> that I wrote and then deployed my Blogofile-powered blog on Google App Engine infrastructure.  It would be redundant to re-iterate all the reasons of why I chose Blogofile when you can read on the Blogofile web site.  But the most appealing features to me are the built-in Disqus and Git integration and the fact that the Git integration allows me to move my blog to another host easily if I ever need to do it.  But since I wanted to host on Google App Engine, I had thought that if I managed to accomplish this goal, moving my blog to another host would become a moot point.  Regardless, it's still good to have that option.  Blogofile is a great blog engine, but about the only thing that's better than Blogofile is the ability to run it on a solid infrastructure like Google App Engine.  This is where we can get the best of both worlds.       
 
 This post is written for Ubuntu users, but if you use Windows or another distro, I don't think it would be that different.  First, in order to run App Engine on the lastest Ubuntu, you would have to install Python 2.5, which is no longer the default since Ubuntu 9.04.  You can follow the instructions here:
 
@@ -23,7 +23,7 @@ k@le:~/Blog$ . env/bin/activate
 (env)k@le:~/Blog$    
 $$/code
 
-Once you activate the virtualenv as in the last line above, the prompt of the shell you are using will change, indicating that you are now in the virtualenv.  Assuming you have already git installed, otherwise it's time now to **sudo apt-get install git**.  Next you would want to grab blogofile from the github source repository and run setup:
+Once you activate the virtualenv as in the last line above, the prompt of the shell you are using will change, indicating that you are now in the virtualenv.  Assuming you have already git installed, otherwise it's time now to **sudo apt-get install git**.  Next you would want to grab <a href="https://github.com/EnigmaCurry/enigmacurry.github.com">blogofile</a> from the github source repository and run setup:
 
 $$code(lang=bash)
 (env)k@le:~/Blog$ git clone git://github.com/EnigmaCurry/blogofile.git src
